@@ -28,11 +28,17 @@ export default defineConfig({
     },
     server: {
         proxy: {
+          '/agents': 'http://localhost:3000',
+        },
+      }
+
+    /*server: {
+        proxy: {
             "/api": {
                 target: `http://localhost:${process.env.SERVER_PORT || 3000}`,
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, ""),
             },
         },
-    },
+    },*/
 });
